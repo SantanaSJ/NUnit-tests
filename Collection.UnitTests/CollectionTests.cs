@@ -187,8 +187,11 @@ namespace Colelction.UnitTests
         [Test]
         public void Test_Collection_InsertAtInvalidIndex()
         {
-            Assert.That(() => { var collection = new Collections<int>(1, 2, 3); collection.InsertAt(5, 4); },
-                Throws.InstanceOf<ArgumentOutOfRangeException>());
+        var collection = new Collections<int>(1, 2, 3);
+            Assert.That(() => collection.InsertAt(5, 4),
+                Throws.TypeOf<ArgumentOutOfRangeException>());
+            //Assert.That(() => { var collection = new Collections<int>(1, 2, 3); collection.InsertAt(5, 4); },
+            //    Throws.InstanceOf<ArgumentOutOfRangeException>());
         }
 
         [Test]
